@@ -8,6 +8,7 @@ import CompanyForm from "./CompanyForm";
 import Image from "next/image";
 import Logo from "@/public/logo-2.png";
 import UserTypeSelection from "./UserTypeSelection";
+import JobSeekerForm from "@/components/forms/onboarding/JobSeekerForm";
 // import JobSeekerForm from "./JobSeekerForm";
 
 type UserType = "company" | "jobSeeker" | null;
@@ -26,7 +27,7 @@ export default function OnboardingForm() {
             case 1:
                 return <UserTypeSelection onSelect={handleUserTypeSelect}/>;
             case 2:
-                return userType === "company" ? <CompanyForm/> : <div>abc</div>;
+                return userType === "company" ? <CompanyForm/> : <JobSeekerForm/>;
             default:
                 return null;
         }
